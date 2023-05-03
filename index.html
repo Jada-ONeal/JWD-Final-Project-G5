@@ -11,7 +11,7 @@
 </head>
 <body class="header">
    <h1>Task Manager</h1>
-   <h2>Add New Task</h2>
+   <h2>Add New Task</h2><br>
     <form>
         <div class="task-name">
           <label for="task-name">Task Name:</label><br><br>
@@ -22,17 +22,35 @@
           <input type="taskdescription" class="taskdescription" id="des"><br><br>
         </div>
         <div class="assignedto">
-            <label class="assigned" for="assigned">Assigned to:</label><br><br>
-          <input type="assigned" class="assigned" id="assigned">
-                  
-          <div class="duedate">
+            <label class="assigned" for="assigned">Assigned to:</label>
             <label class="duedate" for="duedate">Due date :</label><br><br>
-            <input type="duedate" class="duedate" id="due">
+          <input type="assigned" class="assigned" id="assigned">
+          <input type="duedate" class="duedate" id="due"><br><br>     
+          
+            
+            
                       
         
         </div>
-        <button type="addtask" class="btn btn-primary">Add task</button>
+        <button type="addtask" class="addtaskbtn">Add task</button><br><br>
       </form>
+      
+
+        <h2>Tasks</h2>
+        <div class="card" style="width: 25rem;">
+        <div class="card-body">
+          <a href="#" class="btn btn-success">Status</a>
+        </div>
+          <h4 class="card-subtitle mb-2 text-muted">Task Name</h4>
+          <h4 class="card-subtitle mb-2 text-muted">Task Description</h4>
+          <h4 class="card-subtitle mb-2 text-muted">Assaigned to</h4>
+          <h4 class="card-subtitle mb-2 text-muted">Due date</h4>
+          <h4 class="card-subtitle mb-2 text-muted">Status</h4>
+          
+        </div>
+          
+        </div>
+      </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
