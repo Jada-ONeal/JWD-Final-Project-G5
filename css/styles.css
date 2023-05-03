@@ -8,19 +8,21 @@ h1 {
     margin-right: 200;
 }
 
-.btn {
-    display: block;
+.btn-group {
+    
     width: 20%;
     border: none;
     text-align: center;
-    float: right;}
+    float: left;}
 
 .duedate {
     float: right;
 }
     
 
-    
+.tasklist {
+    float: right;
+}
 
     
 
