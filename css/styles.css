@@ -8,7 +8,17 @@ h1 {
     margin-right: 200;
 }
 
+.btn {
+    display: block;
+    width: 20%;
+    border: none;
+    text-align: center;
+    float: right;}
 
+.duedate {
+    float: right;
+}
+    
 
     
 
