@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+    background-color: beige;
+}
+.header {
+    margin-left: 80px;
+    margin-right: 180;
+}
+.duedate {
+    text-align: right;
+    text-align: inline;
+}
