@@ -1,3 +1,5 @@
+
+
 document.querySelector('#push').onclick = function() {
     var inputs = document.querySelectorAll('#newtask input');
     var isEmpty = false;
@@ -12,7 +14,6 @@ document.querySelector('#push').onclick = function() {
     if (isEmpty) {
         alert("Kindly fill in all input fields!");
     } else {
-        
         document.querySelector('#tasks').innerHTML += `
         <div class="task">
             <span id="taskname">
@@ -30,5 +31,8 @@ document.querySelector('#push').onclick = function() {
             this.parentNode.remove();
         }
     }
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].value = '';
+        }
     }
 }
