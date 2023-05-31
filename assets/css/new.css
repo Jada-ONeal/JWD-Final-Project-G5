@@ -19,6 +19,8 @@ body{
     position: absolute;
     min-height: 100px;
     transform: translate(-50%,-50%);
+    display: grid;
+    grid-template
 }
 #newtask{
     position: relative;
@@ -83,7 +85,7 @@ body{
     font-weight: 400;
 }
 .task button{
-    background-color: #6583e5;
+    background-color: red;
     color: #ffffff;
     border: none;
     cursor: pointer;
