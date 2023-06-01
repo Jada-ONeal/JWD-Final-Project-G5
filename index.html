@@ -1,57 +1,47 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Task Manager</title>
 </head>
 <body>
-    <div class="banner">
-        <h1>Task List</h1>
-    </div>
-    <div class="container form-control">
-        <!-- Task Form -->
-        <form id="taskForm" >
-            <div class="form-group">
-                <label for="taskName">Name</label>
-                <input type="text" class="form-control" id="taskName" placeholder="Enter task name">
-            </div>
-            <div class="form-group">
-                <label for="taskDescription">Description</label>
-                <textarea class="form-control" id="taskDescription" placeholder="Enter task description"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="taskAssignedTo">Assigned To</label>
-                <input type="text" class="form-control" id="taskAssignedTo" placeholder="Enter assigned person's name">
-            </div>
-            <div class="form-group">
-                <label for="taskDueDate">Due Date</label>
-                <input type="date" class="form-control" id="taskDueDate">
-            </div>
-            <div class="form-group">
-                <label for="taskStatus">Status</label>
-                <select class="form-control" id="taskStatus">
-                    <option value="todo">To Do</option>
-                    <option value="inprogress">In Progress</option>
-                    <option value="review">Review</option>
-                    <option value="done">Done</option>
+    <header>
+        <h1>Task Manager</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>New Task</h2>
+            <form id="taskForm">
+                <label for="name">Task Name:</label>
+                <input type="text" id="name" required>
+                <label for="description">Task Description:</label>
+                <textarea id="description" required></textarea>
+                <label for="assignedTo">Assigned To:</label>
+                <input type="text" id="assignedTo" required>
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate" required>
+                <label for="status">Status:</label>
+                <select id="status" required>
+                    <option value="TODO">TODO</option>
+                    <option value="IN PROGRESS">IN PROGRESS</option>
+                    <option value="DONE">DONE</option>
                 </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Add Task</button>
-        </form>
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
 
-        <!-- Task List -->
-        <ul id="taskList" class="list-group mt-4">
-            <!-- Sample task cards will be dynamically added here -->
-        </ul>
-    </div>
+        <section>
+            <h2>Tasks</h2>
+            <ul id="taskList"></ul>
+        </section>
+    </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <!-- <script src="assets/js/TaskManager.js"></script> -->
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
