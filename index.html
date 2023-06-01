@@ -1,129 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/styles.css">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Task Manager</title>
 </head>
-
-<body class="header">
-  <h1>Task Manager</h1>
-  <h2>Add New Task</h2><br>
-  <form>
-    <div class="task-name">
-      <label for="task-name">Task Name:</label><br><br>
-      <input type="name" id="taskname" aria-describedby="taskname"><br><br>
+<body>
+    <div class="banner">
+        <h1>Task List</h1>
     </div>
-    <div class="taskdescription1">
-      <label for="taskdescription">Task Description:</label><br><br>
-      <input type="taskdescription" class="taskdescription" id="des"><br><br>
+    <div class="container">
+        <!-- Task Form -->
+        <form id="taskForm">
+            <div class="form-group">
+                <label for="taskName">Name</label>
+                <input type="text" class="form-control" id="taskName" placeholder="Enter task name">
+            </div>
+            <div class="form-group">
+                <label for="taskDescription">Description</label>
+                <textarea class="form-control" id="taskDescription" placeholder="Enter task description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="taskAssignedTo">Assigned To</label>
+                <input type="text" class="form-control" id="taskAssignedTo" placeholder="Enter assigned person's name">
+            </div>
+            <div class="form-group">
+                <label for="taskDueDate">Due Date</label>
+                <input type="date" class="form-control" id="taskDueDate">
+            </div>
+            <div class="form-group">
+                <label for="taskStatus">Status</label>
+                <select class="form-control" id="taskStatus">
+                    <option value="todo">To Do</option>
+                    <option value="inprogress">In Progress</option>
+                    <option value="review">Review</option>
+                    <option value="done">Done</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+
+        <!-- Task List -->
+        <ul id="taskList" class="list-group mt-4">
+            <!-- Sample task cards will be dynamically added here -->
+        </ul>
     </div>
-    <div class="assignedto">
-      <label class="assigned" for="assigned">Assigned to:</label>
-      <label class="duedate" for="duedate">Due date :</label><br><br>
-      <input type="assigned" class="assigned" id="assigned">
-      <input type="duedate" class="duedate" id="due"><br><br>
 
-
-
-
-
-    </div>
-    <button type="addtask" class="addtaskbtn">Add task</button><br><br>
-  </form>
-
-
-  <h2>Tasks</h2>
-  <div class="card" style="width: 25rem;">
-    <div class="card-body">
-      <a href="#" href="#" class="btn-group">
-        <button id="red">Not Started</button>
-        <button id="yellow">In Progress</button>
-        <button id="green">Done</button>
-      </a>
-    </div>
-    <h4 class="card-subtitle mb-2 text-muted">Task Name: Clean the kitchen</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Task Description:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Assaigned to:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Due date:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Status:</h4>
-  </div>
-  <br>
-  <div class="card" style="width: 25rem;">
-    <div class="card-body">
-      <a href="#" href="#" class="btn-group">
-        <button>Not Started</button>
-        <button>In Progress</button>
-        <button>Done</button>
-      </a>
-    </div>
-    <h4 class="card-subtitle mb-2 text-muted">Task Name: Take out the trash</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Task Description:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Assaigned to:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Due date:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Status:</h4>
-  </div>
-  <br>
-  <div class="card" style="width: 25rem;">
-    <div class="card-body">
-      <a href="#" href="#" class="btn-group">
-        <button>Not Started</button>
-        <button>In Progress</button>
-        <button>Done</button>
-      </a>
-    </div>
-    <h4 class="card-subtitle mb-2 text-muted">Task Name: Pick up dirty clothes</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Task Description:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Assaigned to:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Due date:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Status:</h4>
-  </div>
-  <br>
-  <div class="card" style="width: 25rem;">
-    <div class="card-body">
-      <a href="#" class="btn-group">
-        <button>Not Started</button>
-        <button>In Progress</button>
-        <button>Done</button>
-      </a>
-    </div>
-    <h4 class="card-subtitle mb-2 text-muted">Task Name: Wash Laundry</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Task Description:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Assaigned to:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Due date:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Status:</h4>
-  </div>
-  <br>
-  <div class="card" style="width: 25rem;">
-    <div class="card-body">
-      <a href="#" href="#" class="btn-group">
-        <button>Not Started</button>
-        <button>In Progress</button>
-        <button>Done</button>
-      </a>
-    </div>
-    <h4 class="card-subtitle mb-2 text-muted">Task Name: Clean car</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Task Description:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Assaigned to:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Due date:</h4>
-    <h4 class="card-subtitle mb-2 text-muted">Status:</h4>
-  </div>
-  <br><br>
-
-
-
-
-  </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
-
 </html>

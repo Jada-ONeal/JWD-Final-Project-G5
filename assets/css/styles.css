@@ -1,28 +1,49 @@
-h1 {
-    text-align: center;
-    background-color: beige;
-    
-}
-.header {
-    margin-left: 80px;
-    margin-right: 200;
-}
 
-.btn-group {
-    
-    width: 20%;
-    border: none;
-    text-align: center;
-    float: left;}
 
-.duedate {
-    float: right;
-}
-    
-
-.tasklist {
-    float: right;
+/* Reset CSS */
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-    
+/* Color scheme */
+:root {
+  --text: #0a0106;
+  --bg-color: #fef1f9;
+  --primary-button-color: #f57584;
+  --secondary-button-color: #fce0cf;
+  --accent-color: #ef6915;
+}
 
+/* Responsive and Bootstrap classes */
+body {
+  background-color: var(--bg-color);
+}
+
+.banner {
+background-color: var();
+  color: var(--text);
+}
+
+.container {
+  padding-top: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#taskForm {
+  margin-bottom: 20px;
+}
+
+#taskList {
+  list-style: none;
+}
+
+/* Rounded corners */
+.form-control,
+.card {
+  border-radius: 15px;
+}
