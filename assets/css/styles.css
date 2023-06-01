@@ -1,65 +1,21 @@
-/* 
-
-/*Reset CSS 
-*,
-*:before,
-*:after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-/* Color scheme 
 :root {
-  --text: #0a0106;
-  --bg-color: #fef1f9;
-  --primary-button-color: #f57584;
-  --secondary-button-color: #fce0cf;
-  --accent-color: #ef6915;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
 }
-
-/* Responsive and Bootstrap classes 
-body {
-  background-color: var(--bg-color);
-}
-
-.banner {
-background-color: var();
-  color: var(--text);
-}
-
-.container {
-  padding-top: 40px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-#taskForm {
-  margin-bottom: 20px;
-}
-
-#taskList {
-  list-style: none;
-}
-
-/* Rounded corners 
-.form-control,
-.card {
-  border-radius: 15px;
-} */
-
-/* new world */
-/* assets/css/styles.css */
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
 }
 
 header {
-    background-color: #333;
-    color: #fff;
     padding: 10px;
 }
 
@@ -72,9 +28,6 @@ section {
 }
 
 form {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-row-gap: 10px;
     max-width: 400px;
 }
 
@@ -82,28 +35,19 @@ label {
     font-weight: bold;
 }
 
-textarea {
-    height: 100px;
-}
-
 button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
     cursor: pointer;
 }
 
 ul {
-    list-style: none;
     padding: 0;
 }
 
 li {
-    background-color: #f4f4f4;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    background-color: var(--light-color);
 }
 
 span.badge {
@@ -113,17 +57,18 @@ span.badge {
 }
 
 span.badge.TODO {
-    background-color: #e53935;
-    color: #fff;
+    background-color: var(--danger-color);
+    color: var(--light-color);
 }
 
 span.badge.IN_PROGRESS {
-    background-color: #ffc107;
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
 }
 
 span.badge.DONE {
-    background-color: #43a047;
-    color: #fff;
+    background-color: var(--success-color);
+    color: var(--light-color);
 }
 
 small {
