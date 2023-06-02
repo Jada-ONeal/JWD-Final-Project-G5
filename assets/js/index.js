@@ -36,7 +36,7 @@ taskForm.addEventListener("submit", (event) => {
     descriptionInput.value = "";
     assignedToInput.value = "";
     dueDateInput.value = "";
-    statusInput.value = "TODO";
+    statusInput.value = "TO DO";
 
     // Render the tasks
     taskManager.renderTasks();
