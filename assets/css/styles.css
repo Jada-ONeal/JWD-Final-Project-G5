@@ -2,6 +2,7 @@
     --primary-color: #007bff;
     --secondary-color: #6c757d;
     --success-color: #28a745;
+    --progress-color: #fee12b;
     --danger-color: #dc3545;
     --light-color: #f8f9fa;
     --dark-color: #343a40;
@@ -49,6 +50,16 @@ li {
     margin-bottom: 10px;
     background-color: var(--light-color);
 }
+.list-group{
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    gap: 20px;
+    
+}
+
+.list-group-column{
+    border: 3px black solid;
+}
 
 span.badge {
     padding: 5px 10px;
@@ -61,9 +72,9 @@ span.badge.TODO {
     color: var(--light-color);
 }
 
-span.badge.IN_PROGRESS {
-    background-color: var(--secondary-color);
-    color: var(--dark-color);
+span.badge.IN-PROGRESS {
+    background-color: var(--progress-color);
+    color: var(--light-color);
 }
 
 span.badge.DONE {
@@ -78,3 +89,10 @@ small {
 small:first-child {
     margin-bottom: 5px;
 }
+
+.done-task .delete-button {
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+}
+

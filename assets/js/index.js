@@ -1,10 +1,5 @@
-import TaskManager from "/TaskManager.js"
 
-// over world TaskManager ^
-// under world index.js
-
-
-
+import TaskManager from "./TaskManager.js";
 
 // Create an instance of TaskManager
 const taskManager = new TaskManager();
@@ -31,12 +26,8 @@ taskForm.addEventListener("submit", (event) => {
     // Add the task
     taskManager.addTask(name, description, assignedTo, dueDate, status);
 
-    // Clear the form inputs
-    nameInput.value = "";
-    descriptionInput.value = "";
-    assignedToInput.value = "";
-    dueDateInput.value = "";
-    statusInput.value = "TODO";
+    // Reset the form inputs
+    taskForm.reset();
 
     // Render the tasks
     taskManager.renderTasks();
@@ -44,5 +35,4 @@ taskForm.addEventListener("submit", (event) => {
 
 // Render the initial tasks
 taskManager.renderTasks();
-
 

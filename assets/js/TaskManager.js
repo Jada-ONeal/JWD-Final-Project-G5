@@ -1,15 +1,12 @@
 
 
-// Create a class to manage tasks
 
-
- class TaskManager {
+export default class TaskManager {
     constructor() {
         this.tasks = [];
         this.currentId = 0;
     }
 
-    // Method to add a new task
     addTask(name, description, assignedTo, dueDate, status) {
         const task = {
             id: this.currentId++,
@@ -22,12 +19,28 @@
         this.tasks.push(task);
     }
 
-    // Method to delete a task
     deleteTask(taskId) {
         this.tasks = this.tasks.filter((task) => task.id !== taskId);
     }
 
-    // Method to render the tasks on the page
+    updateTask(taskId) {
+        const task = this.tasks.find((task) => task.id === taskId);
+
+        if (task) {
+            switch (task.status) {
+                case 'TODO':
+                    task.status = 'IN-PROGRESS';
+                    break;
+                case 'IN-PROGRESS':
+                    task.status = 'DONE';
+                    break;
+                case 'DONE':
+                    task.status = 'TODO';
+                    break;
+            }
+        }
+    }
+
     renderTasks() {
         const taskList = document.getElementById("taskList");
         taskList.innerHTML = "";
@@ -38,19 +51,33 @@
             taskElement.innerHTML = `
                 <div class="task-header d-flex justify-content-between align-items-center">
                     <span>${task.name}</span>
-                    <button class="delete-button btn btn-danger" data-task-id="${task.id}">Delete</button>
-                </div>
+                </div> 
+                
                 <div class="task-details">
-                    <span class="badge ${task.status}">${task.status}</span>
+                    <p>${task.description}</p>
+                    <span class="badge ${task.status}" data-task-id="${task.id}">${task.status}</span>
                     <small>Assigned To: ${task.assignedTo}</small>
                     <small>Due Date: ${task.dueDate}</small>
                 </div>
-                <p>${task.description}</p>
             `;
 
-            const deleteButton = taskElement.querySelector(".delete-button");
-            deleteButton.addEventListener("click", () => {
-                this.deleteTask(task.id);
+            if (task.status === 'DONE') {
+                const deleteButton = document.createElement("button");
+                deleteButton.classList.add("delete-button", "btn", "btn-danger");
+                deleteButton.innerText = "Delete";
+                deleteButton.dataset.taskId = task.id;
+                deleteButton.addEventListener("click", () => {
+                    this.deleteTask(task.id);
+                    this.renderTasks();
+                });
+                
+                taskElement.appendChild(deleteButton);
+                taskElement.classList.add("done-task");
+            }
+
+            const statusBadge = taskElement.querySelector(`.badge[data-task-id="${task.id}"]`);
+            statusBadge.addEventListener('click', () => {
+                this.updateTask(task.id);
                 this.renderTasks();
             });
 
@@ -59,42 +86,5 @@
     }
 }
 
-// Create an instance of TaskManager
-const taskManager = new TaskManager();
 
-// Add event listener to the task form
-const taskForm = document.getElementById("taskForm");
-taskForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    // Get the form inputs
-    const nameInput = document.getElementById("name");
-    const descriptionInput = document.getElementById("description");
-    const assignedToInput = document.getElementById("assignedTo");
-    const dueDateInput = document.getElementById("dueDate");
-    const statusInput = document.getElementById("status");
-
-    // Get the input values
-    const name = nameInput.value;
-    const description = descriptionInput.value;
-    const assignedTo = assignedToInput.value;
-    const dueDate = dueDateInput.value;
-    const status = statusInput.value;
-
-    // Add the task
-    taskManager.addTask(name, description, assignedTo, dueDate, status);
-
-    // Clear the form inputs
-    nameInput.value = "";
-    descriptionInput.value = "";
-    assignedToInput.value = "";
-    dueDateInput.value = "";
-    statusInput.value = "TODO";
-
-    // Render the tasks
-    taskManager.renderTasks();
-});
-
-// Render the initial tasks
-taskManager.renderTasks();
 
