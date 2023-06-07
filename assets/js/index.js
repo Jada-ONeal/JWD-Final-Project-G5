@@ -10,6 +10,7 @@ taskManager.renderTasks();
 
 // Select the form and add a submit event listener
 const form = document.querySelector('#task-form');
+const errorAlert = document.querySelector("#error-alert"); // Select the error alert element
 form.addEventListener('submit', function (event) {
   event.preventDefault();
 
@@ -28,9 +29,12 @@ form.addEventListener('submit', function (event) {
     taskDueDateInput.value.trim() === '' ||
     taskStatusInput.value.trim() === ''
   ) {
-    alert('Please fill in all fields.');
+    errorAlert.classList.remove('d-none'); // Show the error alert
     return;
   }
+
+  // Clear the error alert
+  errorAlert.classList.add('d-none');
 
   // Add the task to the TaskManager
   taskManager.addTask(
@@ -44,7 +48,7 @@ form.addEventListener('submit', function (event) {
   // Clear the form inputs
   form.reset();
 
-  // render the updated tasks and save them to LocalStorage
+  // Render the updated tasks and save them to LocalStorage
   taskManager.renderTasks();
   taskManager.save();
 });
@@ -60,7 +64,7 @@ tasksList.addEventListener('click', function (event) {
     // Update the task status to 'Done' in the TaskManager
     taskManager.updateTask(taskId);
 
-    // render the updated tasks and save them to LocalStorage
+    // Render the updated tasks and save them to LocalStorage
     taskManager.renderTasks();
     taskManager.save();
   }
