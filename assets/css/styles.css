@@ -28,6 +28,10 @@ section {
     margin-bottom: 20px;
 }
 
+.alert-danger {
+  
+  }  
+
 form {
     max-width: 400px;
 }
