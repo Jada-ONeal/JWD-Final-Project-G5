@@ -33,8 +33,7 @@ form.addEventListener('submit', function (event) {
     return;
   }
 
-  // Clear the error alert
-  errorAlert.classList.add('d-none');
+
 
   // Add the task to the TaskManager
   taskManager.addTask(
@@ -44,6 +43,7 @@ form.addEventListener('submit', function (event) {
     taskDueDateInput.value,
     taskStatusInput.value
   );
+  console.log(taskManager.tasks)
 
   // Clear the form inputs
   form.reset();

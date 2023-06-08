@@ -68,14 +68,14 @@ export default class TaskManager {
             taskElement.classList.add("list-group-item");
             taskElement.innerHTML = `
               <div class="task-header d-flex justify-content-between align-items-center">
-                  <span>${task.name}</span>
+                  <span style ="font-weight:bold;">${task.name}</span>
               </div> 
               
               <div class="task-details">
                   <p>${task.description}</p>
                   <span class="badge ${task.status}" data-task-id="${task.id}">${task.status}</span>
                   <small>Assigned To: ${task.assignedTo}</small>
-                  <small>Due Date: ${task.dueDate}</small>
+                  <small style ="font-weight:bold;">Due Date: ${task.dueDate}</small>
               </div>
           `;
 
