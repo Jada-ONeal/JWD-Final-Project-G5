@@ -17,7 +17,7 @@ Generation USA (nat-007) Final Project Group 5- Jada , Josiah, Eden, Haggie
 # HOW TO USE the Task Manager
   1,  Clone the repository from GitHub:https://github.com/Jada-ONeal/JWD-Final-Project-G5.git
 
-  2, Access the Task Manager through your web browser at http://127.0.0.1:3000/index.html
+  2, Access the Task Manager through your web browser at https://jada-oneal.github.io/JWD-Final-Project-G5/
 
    3, Fill out the form and add task.
 
