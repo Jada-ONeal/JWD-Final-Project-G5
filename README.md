@@ -24,7 +24,10 @@ Generation USA (nat-007) Final Project Group 5- Jada , Josiah, Eden, Haggie
    4, Update your progress.
   
 # Credit
-     https://github.com/Haggieyimam , https://github.com/Jada-ONeal, https://github.com/eyk261, https://github.com/SQBeef 
+     https://github.com/Haggieyimam 
+     https://github.com/Jada-ONeal
+     https://github.com/eyk261 
+     https://github.com/SQBeef 
 
   
 
